@@ -2,6 +2,14 @@
 
 This project predicts the likelihood of heart disease using a machine learning model trained on the [Personal Key Indicators of Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease) dataset.
 
+## Sample Output
+
+**Person Data:**  
+![Person Data](./img/predictX.png)
+
+**Diagnosis:**  
+![Diagnosis](./img/result.png)
+
 ## Project Structure
 
 - `heart_disease_prediction.ipynb` — Jupyter Notebook version (recommended for exploration and step-by-step explanation)
