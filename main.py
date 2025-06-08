@@ -102,18 +102,21 @@ columns = [
 # Create the DataFrame
 predictX = pd.DataFrame(data, columns=columns)
 
-
 # Predict
 prediction = model.predict(predictX)
 
 for index, result in enumerate(prediction):
-    if result[0] > 0.8:
-        print(f"Person {index + 1} has Very High Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
-    elif result[0] > 0.6:
-        print(f"Person {index + 1} has High Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
-    elif result[0] > 0.4:
-        print(f"Person {index + 1} has Moderate Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
-    elif result[0] > 0.2:
-        print(f"Person {index + 1} has Low Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
+    prob = result[0]
+    
+    if prob > 0.8:
+        risk = "Very High Risk"
+    elif prob > 0.6:
+        risk = "High Risk"
+    elif prob > 0.4:
+        risk = "Moderate Risk"
+    elif prob > 0.2:
+        risk = "Low Risk"
     else:
-        print(f"Person {index + 1} has Very Low Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
+        risk = "Very Low Risk"
+    
+    print(f"\nPerson {index + 1}: {risk} of Heart Disease | Predicted Probability: {prob:.2f}")
