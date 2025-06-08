@@ -1,4 +1,4 @@
-# Heart Disease Detector
+# ❤️‍🔥 Heart Disease Detector
 
 This project predicts the likelihood of heart disease using a machine learning model trained on the [Personal Key Indicators of Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease) dataset.
 
