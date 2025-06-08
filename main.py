@@ -100,7 +100,20 @@ columns = [
 ]
 
 # Create the DataFrame
-x = pd.DataFrame(data, columns=columns)
+predictX = pd.DataFrame(data, columns=columns)
 
-prediction = model.predict(x)
-print(prediction)
+
+# Predict
+prediction = model.predict(predictX)
+
+for index, result in enumerate(prediction):
+    if result[0] > 0.8:
+        print(f"Person {index + 1} has Very High Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
+    elif result[0] > 0.6:
+        print(f"Person {index + 1} has High Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
+    elif result[0] > 0.4:
+        print(f"Person {index + 1} has Moderate Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
+    elif result[0] > 0.2:
+        print(f"Person {index + 1} has Low Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
+    else:
+        print(f"Person {index + 1} has Very Low Risk of Heart Disease. Confidence level: {result[0]: .2f}\n")
